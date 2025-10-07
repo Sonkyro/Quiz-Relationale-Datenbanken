@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenbank-Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    canvas { position:absolute; top:0; left:0; pointer-events:none; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 flex flex-col items-center min-h-screen p-6 relative">
+
+  <!-- Zähler -->
+  <div id="score-display" class="absolute top-4 right-4 text-lg font-semibold bg-white px-3 py-1 rounded shadow">
+    ✅ 0 | ❌ 0
+  </div>
+
+  <h1 class="text-3xl font-bold mb-6">Relationale Datenbanken - Lernquiz</h1>
+  <div id="quiz-container" class="relative bg-white p-6 rounded-2xl shadow-md w-full max-w-3xl"></div>
+
+  <button id="next-btn" class="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 hidden">Nächste Frage</button>
+  <canvas id="connection-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
