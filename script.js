@@ -232,6 +232,7 @@ function showQuestion() {
       const leftCol = document.createElement("div");
       const rightCol = document.createElement("div");
 
+      // --- Spalten befüllen ---
       q.pairs.forEach(p => {
         const l = document.createElement("div");
         l.textContent = p.left;
@@ -251,14 +252,55 @@ function showQuestion() {
       pairsContainer.append(leftCol, rightCol);
       qElem.appendChild(pairsContainer);
 
-      let selectedLeft = null;
+      // --- Canvas vorbereiten ---
       const canvas = document.getElementById("connection-canvas");
       const ctx = canvas.getContext("2d");
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
+      let selectedLeft = null;
+      let connections = []; // speichert { leftElem, rightElem }
+
+      function redrawConnections() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        connections.forEach(({ leftElem, rightElem }) => {
+          const rectLeft = leftElem.getBoundingClientRect();
+          const rectRight = rightElem.getBoundingClientRect();
+          ctx.beginPath();
+          ctx.moveTo(rectLeft.right, rectLeft.top + rectLeft.height / 2 + window.scrollY);
+          ctx.lineTo(rectRight.left, rectRight.top + rectRight.height / 2 + window.scrollY);
+          ctx.strokeStyle = "#2563eb";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        });
+      }
+
+      function removeConnectionFor(elem) {
+        // Alle Verbindungen löschen, die dieses Element beinhalten
+        connections = connections.filter(({ leftElem, rightElem }) => {
+          if (leftElem === elem || rightElem === elem) {
+            leftElem.classList.remove("bg-yellow-100");
+            rightElem.classList.remove("bg-green-100");
+            delete leftElem.dataset.match;
+            delete rightElem.dataset.match;
+            return false;
+          }
+          return true;
+        });
+        redrawConnections();
+      }
+
       leftCol.querySelectorAll("div").forEach(l => {
         l.onclick = () => {
+          // Wenn bereits verbunden → Verbindung löschen
+          const existing = connections.find(c => c.leftElem === l);
+          if (existing) {
+            removeConnectionFor(l);
+            return;
+          }
+
+          // Andernfalls für neue Verbindung vormerken
+          leftCol.querySelectorAll("div").forEach(div => div.classList.remove("bg-yellow-200"));
           selectedLeft = l;
           l.classList.add("bg-yellow-200");
         };
@@ -266,23 +308,34 @@ function showQuestion() {
 
       rightCol.querySelectorAll("div").forEach(r => {
         r.onclick = () => {
+          // Wenn rechter Eintrag bereits verbunden → löschen
+          const existing = connections.find(c => c.rightElem === r);
+          if (existing) {
+            removeConnectionFor(r);
+            return;
+          }
+
+          // Nur verbinden, wenn linker ausgewählt ist
           if (!selectedLeft) return;
-          const rectLeft = selectedLeft.getBoundingClientRect();
-          const rectRight = r.getBoundingClientRect();
-          ctx.beginPath();
-          ctx.moveTo(rectLeft.right, rectLeft.top + rectLeft.height / 2 + window.scrollY);
-          ctx.lineTo(rectRight.left, rectRight.top + rectRight.height / 2 + window.scrollY);
-          ctx.strokeStyle = "#2563eb";
-          ctx.lineWidth = 2;
-          ctx.stroke();
+
+          // Alte Verbindung des linken löschen (nur eine pro Seite)
+          removeConnectionFor(selectedLeft);
+
+          // Neue Verbindung speichern
+          connections.push({ leftElem: selectedLeft, rightElem: r });
+
+          selectedLeft.classList.add("bg-yellow-100");
+          r.classList.add("bg-green-100");
 
           selectedLeft.dataset.match = r.textContent;
-          selectedLeft.classList.remove("bg-yellow-200");
+          delete selectedLeft.classList.remove("bg-yellow-200");
           selectedLeft = null;
+
+          redrawConnections();
         };
       });
       break;
-  }
+    }
 
   qElem.appendChild(checkBtn);
   container.appendChild(qElem);
