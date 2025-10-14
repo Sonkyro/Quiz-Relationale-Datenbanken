@@ -1,34 +1,23 @@
 [
-  {
+    {
     "type": "multipleChoice",
-    "question": "Welche SQL-Befehle werden zum Ändern von Daten genutzt?",
-    "options": ["SELECT", "UPDATE", "INSERT", "DELETE"],
-    "answer": ["UPDATE", "INSERT", "DELETE"]
-  },
-  {
-    "type": "trueFalse",
-    "question": "Ein Primärschlüssel darf NULL-Werte enthalten.",
-    "answer": "falsch"
-  },
-  {
-    "type": "fillInBlank",
-    "text": "Ein Fremdschlüssel verweist auf einen ___ in einer anderen Tabelle. Der ___ ist die eindeutige Kennung. Ein ___ dient zur Beschleunigung von Abfragen.",
-    "options": ["Primärschlüssel", "Primärschlüssel", "Index", "Datensatz"],
-    "answers": ["Primärschlüssel", "Primärschlüssel", "Index"]
-  },
-  {
-    "type": "sorting",
-    "question": "Ordne die Bestandteile einer typischen SELECT-Abfrage:",
-    "items": ["FROM", "WHERE", "SELECT", "ORDER BY"],
-    "correctOrder": ["SELECT", "FROM", "WHERE", "ORDER BY"]
-  },
-  {
-    "type": "matching",
-    "question": "Ordne die SQL-Befehle ihren Funktionen zu:",
-    "pairs": [
-      { "left": "SELECT", "right": "Daten abrufen" },
-      { "left": "INSERT", "right": "Daten einfügen" },
-      { "left": "DELETE", "right": "Daten löschen" }
-    ]
-  }
+    "question": "Was ist ein typisches Problem von Tabellenkalkulationen?",
+    "options": ["Automatische Datenprüfung", "Redundanz und Inkonsistenz", "Daten Unsicherheit", "Multiuser Unterstützung"],
+    "answer": ["Redundanz und Inkonsistenz"]
+    },
+    {
+    "type": "multipleChoice",
+    "question": "Wie kommt es zu Redundanz bei Tabellenkalkulationen?",
+    "options": ["Daten werden mehrfach gespeichert", "Daten werden nicht aktualisiert", "Formeln sind Fehlerhaft"],
+    "answer": ["Daten werden mehrfach gespeicher", "Daten werden nicht aktualisiert"]
+    },
+    {
+    "type": "multipleChoice",
+    "question": "Was ist ein Beispiel für eine Anwendung von Datenbanken?",
+    "options": ["Sportverein Kostenübersicht", "Kundendaten und Bestellungen im Onlineshop", "Diagramme mit Summen", "Noten von Schülern"],
+    "answer": ["Kundendaten und Bestellungen im Onlineshop", "Noten von Schülern"]
+    }
+
+
+    
 ]
