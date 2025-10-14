@@ -1,22 +1,169 @@
 [
     {
     "type": "multipleChoice",
-    "question": "Was ist ein typisches Problem von Tabellenkalkulationen?",
+    "question": "Was ist ein typisches Problem von Tabellenkalkulationen? [1]",
     "options": ["Automatische Datenprüfung", "Redundanz und Inkonsistenz", "Daten Unsicherheit", "Multiuser Unterstützung"],
     "answer": ["Redundanz und Inkonsistenz"]
     },
+
     {
     "type": "multipleChoice",
-    "question": "Wie kommt es zu Redundanz bei Tabellenkalkulationen?",
+    "question": "Wie kommt es zu Redundanz bei Tabellenkalkulationen? [2]",
     "options": ["Daten werden mehrfach gespeichert", "Daten werden nicht aktualisiert", "Formeln sind Fehlerhaft"],
-    "answer": ["Daten werden mehrfach gespeicher", "Daten werden nicht aktualisiert"]
+    "answer": ["Daten werden mehrfach gespeichert", "Daten werden nicht aktualisiert"]
     },
+
     {
     "type": "multipleChoice",
-    "question": "Was ist ein Beispiel für eine Anwendung von Datenbanken?",
+    "question": "Was ist ein Beispiel für eine Anwendung von Datenbanken? [2]",
     "options": ["Sportverein Kostenübersicht", "Kundendaten und Bestellungen im Onlineshop", "Diagramme mit Summen", "Noten von Schülern"],
     "answer": ["Kundendaten und Bestellungen im Onlineshop", "Noten von Schülern"]
+    },
+
+    {
+    "type": "multipleChoice",
+    "question": "In welchem Fall wäre eine Datenbank die bessere Wahl? [1]",
+    "options": ["Kostenübersicht für ein Hobby", "kleine Datensätze", "Verwaltung eines Onlineshops", "Sever Überwachung"],
+    "answer": ["Verwaltung eines Onlineshops"]
+    },
+
+    {
+    "type": "multipleChoice",
+    "question": "In welchem Fall ist es sinnvoll eine Tabellenkalkulation zu benutzen? [2]",
+    "options": ["Ordnen von Schulnoten", "Erfassen wissenschaftlicher Daten", "Inventur/ Lagererfassung eines Unternehmens", "Verwaltung von Transaktionen in Banken"],
+    "answer": ["Ordnen von Schulnoten", "Erfassen wissenschaftlicher Daten"]
+    },
+
+    {
+    "type": "multipleChoice",
+    "question": "Ein Datensatz, also eine Zeile der Tabelle, wird bezeichnet als: [1]",
+    "options": ["Datenmenge", "Attribut ", "Tupel"],
+    "answer": ["Tupel"]
+    },
+
+    {
+    "type": "multipleChoice",
+    "question": "Welche 2, der genannten Ebenen existieren bei Datenbanken. [2]",
+    "options": ["Rationale Sicht", "Externe Sicht", "Systematische Sicht", "Konzeptionelle Sicht"],
+    "answer": ["Externe Sicht", "Konzeptionelle Sicht"]
+    },
+
+    {
+    "type": "multipleChoice",
+    "question": "Welche Aussage beschreibt ein Datenbankmanagementsystem (DBMS) am besten? [1]",
+    "options": [
+        "Es ist die Gesamtheit aller gespeicherten Daten.",
+        "Es verwaltet, organisiert und steuert den Zugriff auf Datenbanken.",
+        "Es beschreibt die logische Struktur einer Datenbank.", 
+        "Es speichert nur unstrukturierte Daten."
+        ],
+    "answer": ["Es verwaltet, organisiert und steuert den Zugriff auf Datenbanken."]
+    },
+
+    {
+    "type": "multipleChoice",
+    "question": "Welche der folgenden Ebenen gehört nicht zur Drei-Ebenen-Architektur? [1]",
+    "options": [
+        "Interne Ebene",
+        "Externe Ebene",
+        "Konzeptuelle Ebene", 
+        "Programmier Ebene"
+        ],
+    "answer": ["Programmier Ebene"]
+    },
+
+    {
+    "type": "fillInBlank",
+    "text": "Eine ___ dient zur systematischen Speicherung, Verwaltung und Auswertung großer Datenmengen.",
+    "options": ["Tabelle", "Datenbank", "Zeile", "Spalte", "Tastatur"],
+    "answers": ["Datenbank"]
+    },
+
+    {
+    "type": "fillInBlank",
+    "text": "Ein ___ ist eine Software, die den Zugriff auf eine Datenbank ermöglicht und diese steuert.",
+    "options": ["Mensch", "Programm", "DBMS", "Monitor"],
+    "answers": ["DBMS"]
+    },
+    
+    {
+    "type": "fillInBlank",
+    "text": "Attribute stellen die ___ in Datenbanksystemen da",
+    "options": ["Spalten", "Zeilen", "eingetragenen Daten", "Datensätze"],
+    "answers": ["eingetragenen Daten"]
+    },
+
+    {
+    "type": "fillInBlank",
+    "text": "Der Attribut (Bezeichner) gibt ___ an",
+    "options": ["die Menge der Daten", "die Art der Daten, als Überschrift", "Größe der Daten "],
+    "answers": ["die Art der Daten, als Überschrift"]
+    },
+
+    {
+    "type": "fillInBlank",
+    "text": "Das Ziel eines DBMS ist es ___ , ___ und ___ der Daten sicherzustellen.",
+    "options": ["Konsistenz", "Integrität", "Sicherheit", "Freiheit"],
+    "answers": ["Konsistenz", "Integrität", "Sicherheit"]
+    },
+
+    {
+    "type": "fillInBlank",
+    "text": "Eine Tabelle besteht aus mehreren ___ (auch Datensätzen genannt) und Spalten, die ___ heißen.",
+    "options": ["Primärschlüssel", "Tupeln", "Listen", "Attribute"],
+    "answers": ["Tupeln", "Attribute"]
+    },
+
+    {
+    "type": "matching",
+    "question": "Ordne die Begriffe den Beschreibungen zu:",
+    "pairs": [
+      { "left": "Primärschlüssel", "right": "Eindeutige Identifikation eines Datensatzes" },
+      { "left": "Fremdschlüssel", "right": "Verknüpf Tabellen miteinander" },
+      { "left": "SQL", "right": "Sprache zur Abfrage und Manipulation von Daten" },
+      { "left": "Redundanz", "right": "Mehrfache Speicherung der selben Daten" }
+    ]
+    },
+
+    {
+    "type": "matching",
+    "question": "Ordne die Begriffe den Beschreibungen zu:",
+    "pairs": [
+      { "left": "Externe Ebene", "right": "beschreibt die Ansicht einzelner Benutzer" },
+      { "left": "Konzeptionelle Ansicht", "right": "beschreibt den Aufbau der Datenbank" },
+      { "left": "Interne Ebene", "right": "beschreibt die Speicherung der Daten" }
+    ]
+    },
+
+    {
+    "type": "matching",
+    "question": "Ordne die Begriffe den Beschreibungen zu:",
+    "pairs": [
+      { "left": "Konsistenz", "right": "Daten sind widerspruchsfrei" },
+      { "left": "Integrität", "right": "Regeln sichern korrekte Eingaben" },
+      { "left": "Redundanzfreiheit", "right": "Keine doppelten Daten" },
+      { "left": "Mehrbenutzerfähigkeit", "right": "Gleichzeitiger Zugriff möglich" }
+    ]
+    },
+
+    {
+    "type": "trueFalse",
+    "question": "Eine Datenbank kann nur vor einer Person genutzt werden.",
+    "answer": "falsch"
+    },
+
+    {
+    "type": "trueFalse",
+    "question": "In eine DBMS können Beziehungen zwischen Daten hergestellt werden.",
+    "answer": "wahr"
+    },
+
+    {
+    "type": "trueFalse",
+    "question": "Die externe Ebene beschreibt die physische Speicherung der Daten auf der Festplatte.",
+    "answer": "falsch"
     }
+
 
 
     
