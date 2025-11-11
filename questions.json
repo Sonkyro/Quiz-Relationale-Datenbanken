@@ -102,13 +102,6 @@
 
     {
     "type": "fillInBlank",
-    "text": "Das Ziel eines DBMS ist es ___ , ___ und ___ der Daten sicherzustellen.",
-    "options": ["Konsistenz", "Integrität", "Sicherheit", "Freiheit"],
-    "answers": ["Konsistenz", "Integrität", "Sicherheit"]
-    },
-
-    {
-    "type": "fillInBlank",
     "text": "Eine Tabelle besteht aus mehreren ___ (auch Datensätzen genannt) und Spalten, die ___ heißen.",
     "options": ["Primärschlüssel", "Tupeln", "Listen", "Attribute"],
     "answers": ["Tupeln", "Attribute"]
